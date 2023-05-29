@@ -15,7 +15,7 @@
         <a class="nav-link" href="<?= site_url('categori') ?>">Matakuliah List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">Link</a>
+          <a class="nav-link" href="<?= site_url('transaksikuliah') ?>">Transaksi Matakuliah</a>
         </li>
       </ul>
       <form class="d-flex">
