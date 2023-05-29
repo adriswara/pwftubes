@@ -11,8 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Form Input Kucing</h1>
-  <p>Isi form untuk input kucing pada halaman berikut</p>
+  <h1>Form Input mahasiswa</h1>
+  <p>Isi form untuk input mahasiswa pada halaman berikut</p>
 </div>
     <!-- <form action="" method="post">
         <table>

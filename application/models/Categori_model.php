@@ -6,37 +6,37 @@ class Categori_model extends CI_Model {
 	public function create()
 	{
     $data = array(
-        'cate_name' => $this->input->post('cate_name'),
-        'description' => $this->input->post('description')
+        'nama' => $this->input->post('nama'),
+        'sks' => $this->input->post('sks')
     );
-    $this->db->insert('',$data);
+    $this->db->insert('matakuliah',$data);
         
 
 	}
 	public function read()
 	{
-      $query=$this->db->get('');
+      $query=$this->db->get('matakuliah');
         return $query->result();
     }
     
     public function read_by($id)
 	{
-        $this->db->where('id',$id);
-        $query=$this->db->get('');
+        $this->db->where('id_matakuliah',$id);
+        $query=$this->db->get('matakuliah');
         return $query->row();
     }
     public function update($id){
         $data = array(
-        'cate_name' => $this->input->post('cate_name'),
-        'description' => $this->input->post('description')
+        'nama' => $this->input->post('nama'),
+        'sks' => $this->input->post('sks')
         );
-        $this->db->where('id',$id);
-        $this->db->update('',$data);
+        $this->db->where('id_matakuliah',$id);
+        $this->db->update('matakuliah',$data);
     }
 
     public function delete($id){
-        $this->db->where('id',$id); 
-        $this->db->delete(''); 
+        $this->db->where('id_matakuliah',$id); 
+        $this->db->delete('matakuliah'); 
     }
     
 

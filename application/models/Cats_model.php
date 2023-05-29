@@ -32,7 +32,7 @@ class Cats_model extends CI_Model {
             'nama' => $this->input->post('nama'),
             'role' => $this->input->post('role'),
             'ipk' => $this->input->post('ipk'),
-            'sks_lulus' => $this->input->post('besar_cc_088'),
+            'sks_lulus' => $this->input->post('sks_lulus'),
         );
         $this->db->where('id_mahasiswa',$id);
         $this->db->update('mahasiswa',$data);

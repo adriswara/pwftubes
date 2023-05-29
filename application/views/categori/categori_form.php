@@ -11,8 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Form Input Kategori</h1>
-  <p>Isi form untuk input kategori pada halaman berikut</p>
+  <h1>Form Input matakuliah</h1>
+  <p>Isi form untuk input matakuliah pada halaman berikut</p>
 </div>
     <!-- <form action="" method="post">
         <table>
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <td><input type="radio" name="" id="">Male<input type="radio" name="" id="">Female</td>
             </tr>
             <tr>
-                <td>description</td>
+                <td>sks</td>
                 <td><input type="text" name="" id=""></td>
             </tr>
             <tr>
@@ -49,12 +49,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </form> -->
 
     <?php 
-      $cate_name='';
-      $description='';
+      $nama='';
+      $sks='';
      
     if (isset($categori)) {
-      $cate_name=$categori->cate_name;
-      $description=$categori->description;
+      $nama=$categori->nama;
+      $sks=$categori->sks;
      
       
     }
@@ -67,14 +67,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <form action="" method="post">
   <div class="mb-3 mt-3 ms-3">
-    <label for="cate_name" class="form-label">Nama:</label>
-    <input type="text" class="form-control" id="cate_name" placeholder="Enter cate_name" name="cate_name" value="<?= $cate_name ?>" required>
+    <label for="nama" class="form-label">Nama:</label>
+    <input type="text" class="form-control" id="nama" placeholder="Enter nama" name="nama" value="<?= $nama ?>" required>
   </div>
 
  
   <div class="mb-3 mt-3 ms-3">
-    <label for="description" class="form-label">Deskripsi:</label>
-    <input type="text" class="form-control" id="description" placeholder="Enter description" name="description" value="<?= $description ?>" required>
+    <label for="sks" class="form-label">SKS:</label>
+    <input type="text" class="form-control" id="sks" placeholder="Enter sks" name="sks" value="<?= $sks ?>" required>
   </div>
 
   <button type="submit" class="btn btn-primary ms-3" value="save" name="submit">Submit</button>

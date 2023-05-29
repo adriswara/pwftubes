@@ -9,9 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Daftar Kucing</h1>
+  <h1>Daftar mahasiswa</h1>
   <?= $this->session->flashdata('msg'); ?>
-  <p>Berikut daftar kucing yang tersedia</p>
+  <p>Berikut daftar mahasiswa yang tersedia</p>
 </div>
     <!-- <hr>
     <table border="1">
@@ -40,8 +40,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- <div class="col-sm-3 mt-5 ms-3">
         <div class="card bg-dark text-white" style="width:400px">
           <div class="card-body">
-            <h4 class="card-title">1.Kucing Ipsum</h4>
-            <p class="card-text">Kucing Ipsum adalah Type a dengan Gender b yang sudah berumur c.</p>
+            <h4 class="card-title">1.mahasiswa Ipsum</h4>
+            <p class="card-text">mahasiswa Ipsum adalah Type a dengan Gender b yang sudah berumur c.</p>
             <a href="#" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-danger">Delete</a>
           </div>
           <img class="card-img-bottom" src="assets\img-cat1.png" alt="Card image" style="width:100%">
@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="card bg-dark text-white" style="width:400px">
           <div class="card-body">
             <h4 class="card-title"><?= $i++ ?>. <?= $cat->name ?>, $<?= $cat->price ?></h4>
-            <p class="card-text"> <?= $cat->name ?> adalah kucing Type <?= $cat->type ?> dengan Gender <?= $cat->gender ?> yang sudah berumur <?= $cat->age ?>.</p>
+            <p class="card-text"> <?= $cat->name ?> adalah mahasiswa Type <?= $cat->type ?> dengan Gender <?= $cat->gender ?> yang sudah berumur <?= $cat->age ?>.</p>
             <a href="<?=site_url('Welcome/edit/'.$cat->id)?>" class="btn btn-primary">Edit</a> 
             <a href="<?=site_url('Welcome/delete/'.$cat->id)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a>
           </div>

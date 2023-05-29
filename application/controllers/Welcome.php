@@ -37,8 +37,8 @@ class Welcome extends CI_Controller {
 	{
 		// $this->load->view('welcome_message');
 		// $this->load->model('Cats_model');
-		$data['cats']=$this->Cats_model->read();
-		$this->load->view('cats/cat_list',$data);
+		//$data['cats']=$this->Cats_model->read();
+		$this->load->view('home');
 
 
 	}

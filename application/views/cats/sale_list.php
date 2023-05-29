@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="mt-0 p-5 bg-primary text-white">
   <h1>Daftar Sales</h1>
   <?= $this->session->flashdata('msg'); ?>
-  <p>Berikut daftar kucing yang tersedia</p>
+  <p>Berikut daftar mahasiswa yang tersedia</p>
 </div>
     <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Welcome/add')?>">Add new Item 3</a>
     <hr>
