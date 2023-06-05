@@ -14,8 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Transaksikuliah/add')?>">Add new Transaksi</a>
     <hr>
-    <table border="1">
-        <tr>
+	<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <tr class="table-primary">
             <th>No</th>
             <th>Mahasiswa</th>
             <th>Perkuliahan</th>
@@ -25,8 +26,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php $i=1; foreach($transaksi as $transaksis) { ?>
         <tr>
             <td><?= $i++ ?></td>
-
-           
             <td><?= $transaksis->nama ?></td>
             <td><?= $transaksis->nama_kuliah ?></td>
             <td><?= $transaksis->nama_dosen ?></td>            <td><a href="<?=site_url('Transaksikuliah/edit/'.$transaksis->id_transaksi)?>" class="btn btn-primary">Edit</a></td> 
@@ -34,4 +33,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </tr>
         <?php } ?>
     </table>
+	</div>
 <?php $this->load->view('footer'); ?>

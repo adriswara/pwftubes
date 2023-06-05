@@ -96,8 +96,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
     <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Welcome/add')?>">Add new Mahasiswa</a>
     <hr>
-    <table border="1">
-        <tr>
+  	<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <tr class="table-primary">
             <th>No</th>
             <th>Nama</th>
             <th>Status mahasiswa</th>
@@ -106,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <th colspan="2">Action</th>
         </tr>
         <?php $i=1; foreach($cats as $cat) { ?>
-        <tr>
+        <tr class="table-warning">
             <td><?= $i++ ?></td>
             <td><?= $cat->nama ?></td>
             <td><?= $cat->role ?></td>
@@ -118,7 +119,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </tr>
         <?php } ?>
     </table>
-    
+    </div>
   
   
 <?php $this->load->view('footer'); ?>
