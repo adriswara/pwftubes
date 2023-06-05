@@ -49,11 +49,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </form> -->
 
     <?php 
-      $nama='';
+      $nama_kuliah='';
       $sks='';
      
     if (isset($categori)) {
-      $nama=$categori->nama;
+      $nama_kuliah=$categori->nama_kuliah;
       $sks=$categori->sks;
      
       
@@ -67,8 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <form action="" method="post">
   <div class="mb-3 mt-3 ms-3">
-    <label for="nama" class="form-label">Nama:</label>
-    <input type="text" class="form-control" id="nama" placeholder="Enter nama" name="nama" value="<?= $nama ?>" required>
+    <label for="nama_kuliah" class="form-label">Nama:</label>
+    <input type="text" class="form-control" id="nama_kuliah" placeholder="Enter nama_kuliah" name="nama_kuliah" value="<?= $nama_kuliah ?>" required>
   </div>
 
  

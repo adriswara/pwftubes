@@ -9,10 +9,19 @@
     <div class="collapse navbar-collapse" id="mynavbar" >
       <ul class="navbar-nav me-auto ">
         <li class="nav-item">
-			<a class="nav-link" href="<?= site_url('cats') ?>">Student List</a>
+	  		<a class="nav-link" href="<?= site_url('cats') ?>">Student List</a>
+        </li>
+        <li class="nav-item">
+	  		<a class="nav-link" href="<?= site_url('dosen') ?>">Dosen List</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="<?= site_url('categori') ?>">Matakuliah List</a>
+        </li>
+        <li class="nav-item">
+	  		<a class="nav-link" href="<?= site_url('jadwal') ?>">Jadwal List</a>
+        </li>
+        <li class="nav-item">
+	  		<a class="nav-link" href="<?= site_url('informasi_perkuliahan') ?>">Informasi perkuliahan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url('transaksikuliah') ?>">Transaksi Matakuliah</a>

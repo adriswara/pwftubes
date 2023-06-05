@@ -23,6 +23,8 @@ class transaksikuliah extends CI_Controller {
 	 {
 			 parent::__construct();
 			 $this->load->model('Transaksi_model');
+			 $this->load->model('Categori_model');
+			 $this->load->model('Cats_model');
 			 // Your own constructor code
 	 }
 
@@ -43,7 +45,9 @@ class transaksikuliah extends CI_Controller {
 			redirect('Transaksikuliah/');
 		}
 		// $this->load->model('Transaksi_model');
-		$this->load->view('Transaksikuliah/transaksi_form');
+		$data['mahasiswa']=$this->Cats_model->read();
+		$data['kuliah']=$this->Categori_model->read();
+		$this->load->view('Transaksikuliah/transaksi_form',$data);
 	}
 	public function edit($id){
 		if ($this->input->post('submit')) {
@@ -52,8 +56,11 @@ class transaksikuliah extends CI_Controller {
 		}
 
 		// $this->load->model('Transaksi_model');
+
 		$data['transaksi']=$this->Transaksi_model->read_by($id);
-		$this->load->view('transaksikuliah/transaksi_form',$data);
+		$data['mahasiswa']=$this->Cats_model->read();
+		$data['kuliah']=$this->Categori_model->read();
+		$this->load->view('Transaksikuliah/transaksi_form',$data);
 	}
 	public function delete($id){
 		$this->Transaksi_model->delete($id);

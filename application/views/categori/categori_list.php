@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php $i=1; foreach($categories as $categori) { ?>
         <tr>
             <td><?= $i++ ?></td>
-            <td><?= $categori->nama ?></td>
+            <td><?= $categori->nama_kuliah ?></td>
             <td><?= $categori->sks ?></td>
             <td><a href="<?=site_url('Categori/edit/'.$categori->id_matakuliah)?>" class="btn btn-primary">Edit</a></td> 
             <td><a href="<?=site_url('Categori/delete/'.$categori->id_matakuliah)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
@@ -37,8 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-sm-3 mt-5 ms-3">
         <div class="card bg-dark text-white" style="width:400px">
           <div class="card-body">
-            <h4 class="card-title"><?= $i++ ?>. <?= $categori->nama ?>,</h4>
-            <p class="card-text"> <?= $categori->nama ?>, <?= $categori->sks ?>.</p>
+            <h4 class="card-title"><?= $i++ ?>. <?= $categori->nama_kuliah ?>,</h4>
+            <p class="card-text"> <?= $categori->nama_kuliah ?>, <?= $categori->sks ?>.</p>
             <a href="<?=site_url('Categori/edit/'.$categori->id_matakuliah)?>" class="btn btn-primary">Edit</a> 
             <a href="<?=site_url('Categori/delete/'.$categori->id_matakuliah)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a>
           </div>

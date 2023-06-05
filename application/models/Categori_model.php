@@ -6,7 +6,7 @@ class Categori_model extends CI_Model {
 	public function create()
 	{
     $data = array(
-        'nama' => $this->input->post('nama'),
+        'nama_kuliah' => $this->input->post('nama_kuliah'),
         'sks' => $this->input->post('sks')
     );
     $this->db->insert('matakuliah',$data);
@@ -27,7 +27,7 @@ class Categori_model extends CI_Model {
     }
     public function update($id){
         $data = array(
-        'nama' => $this->input->post('nama'),
+        'nama_kuliah' => $this->input->post('nama_kuliah'),
         'sks' => $this->input->post('sks')
         );
         $this->db->where('id_matakuliah',$id);
