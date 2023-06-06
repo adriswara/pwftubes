@@ -18,8 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <?php 
       $nama_dosen='';
-    if (isset($dosens)) {
-      $nama_dosen=$dosens->nama_dosen;
+    if (isset($jadwals)) {
+      $nama_dosen=$jadwals->nama_dosen;
     }
 
     ?>

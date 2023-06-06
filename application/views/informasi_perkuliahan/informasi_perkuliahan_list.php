@@ -90,9 +90,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Daftar Dosen</h1>
+  <h1>Informasi Perkuliahan</h1>
   <?= $this->session->flashdata('msg'); ?>
-  <p>Berikut daftar Dosen yang tersedia</p>
+  <p>Berikut daftar Informasi kuliah yang tersedia</p>
 </div>
     <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Informasi/add')?>">Add new Dosen</a>
     <hr>
