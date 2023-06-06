@@ -21,15 +21,15 @@
 	  		<a class="nav-link" href="<?= site_url('jadwal') ?>">Jadwal List</a>
         </li>
         <li class="nav-item">
-	  		<a class="nav-link" href="<?= site_url('informasi_perkuliahan') ?>">Informasi perkuliahan</a>
+	  		<a class="nav-link" href="<?= site_url('informasi') ?>">Informasi perkuliahan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url('transaksikuliah') ?>">Transaksi Matakuliah</a>
         </li>
       </ul>
       <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+        <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
+        <!-- <button class="btn btn-primary" type="button">Search</button> -->
       </form>
     </div>
   </div>
