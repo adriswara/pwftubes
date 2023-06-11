@@ -80,4 +80,11 @@ class Cats_model extends CI_Model {
         return $query->result();
     }
 
+    public function reset($userid,$user)
+    {
+        $this->db->set('password', password_hash($user->username, PASSWORD_DEFAULT));
+        $this->db->where('id_mahasiswa',$userid);
+        $this->db->update('mahasiswa');
+    } 
+
 }

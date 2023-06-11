@@ -74,4 +74,17 @@ class Cats extends CI_Controller {
 		}
 		redirect('Cats/');
 	}
+
+	public function reset($userid){
+        $user = $this->Cats_model->read_by($userid);
+        $this->Cats_model->reset($userid,$user);
+        if($this->db->affected_rows() > 0) {
+            $this->session->set_flashdata('msg','<p style="color:green">Password Successfully Reset !</p>');
+        } else {
+            $this->session->set_flashdata('msg','<p style="color:red">Password Reset Failed !</p>');
+        }
+        redirect('Cats/');
+    }
+
+
 }

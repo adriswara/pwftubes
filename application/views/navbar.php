@@ -28,8 +28,14 @@
         </li>
       </ul>
       <form class="d-flex">
-        <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
-        <!-- <button class="btn btn-primary" type="button">Search</button> -->
+     
+        <!-- <button class="btn btn-primary" type="button">Logout</button> -->
+        <?php if($this->session->userdata('role') != null) {?>
+          <a class="btn btn-light"> <?=$this->session->userdata('nama')?>, you are login as <?=$this->session->userdata('role')?> </a>
+          <a  class="btn btn-primary" href="<?=site_url('auth/logout')?>">Logout</a>
+        <?php } ?> 
+
+
       </form>
     </div>
   </div>

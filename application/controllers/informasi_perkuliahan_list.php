@@ -90,33 +90,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Daftar mahasiswa</h1>
+  <h1>Informasi Perkuliahan</h1>
   <?= $this->session->flashdata('msg'); ?>
-  <p>Berikut daftar mahasiswa yang tersedia</p>
+  <p>Berikut daftar Informasi kuliah yang tersedia</p>
 </div>
-    <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Welcome/add')?>">Add new Mahasiswa</a>
+    <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Informasi/add')?>">Add new Dosen</a>
     <hr>
   	<div class="table-responsive">
     <table class="table table-bordered table-hover">
         <tr class="table-primary">
             <th>No</th>
-            <th>Nama</th>
-            <th>Status mahasiswa</th>
-            <th>ipk</th>
-            <th>Total SKS Lulus</th>
+            <th>judul</th>
+            <th>tanggal</th>
+            <th>isi pengumuman</th>
             <th colspan="2">Action</th>
         </tr>
-        <?php $i=1; foreach($cats as $cat) { ?>
+        <?php $i=1; foreach($informasis as $informasi) { ?>
         <tr class="table-warning">
             <td><?= $i++ ?></td>
-            <td><?= $cat->nama ?></td>
-            <td><?= $cat->role ?></td>
-            <td><?= $cat->ipk ?></td>
-            <td><?= $cat->sks_lulus ?></td>
-            
-            <td><a href="<?=site_url('Cats/reset/'.$cat->id_mahasiswa)?>" class="btn btn-warning">Reset Password</a></td>
-            <td> <a href="<?=site_url('Welcome/edit/'.$cat->id_mahasiswa)?>" class="btn btn-primary">Edit</a> </td>
-            <td><a href="<?=site_url('Welcome/delete/'.$cat->id_mahasiswa)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
+            <td><?= $informasi->judul ?></td>
+            <td><?= $informasi->tanggal ?></td>
+            <td><?= $informasi->isiPengumuman ?></td>
+            <td> <a href="<?=site_url('Informasi/edit/'.$informasi->id_informasi)?>" class="btn btn-primary">Edit</a> </td>
+            <td> <a href="<?=site_url('Informasi/delete/'.$informasi->id_informasi)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
         </tr>
         <?php } ?>
     </table>

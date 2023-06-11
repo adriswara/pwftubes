@@ -38,6 +38,7 @@ class Welcome extends CI_Controller {
 		// $this->load->view('welcome_message');
 		// $this->load->model('Cats_model');
 		//$data['cats']=$this->Cats_model->read();
+		if(! $this->session->userdata('username')) redirect('auth/login');
 		$this->load->view('home');
 
 
