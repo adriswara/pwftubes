@@ -21,6 +21,8 @@ class Transaksi_model extends CI_Model {
         $this->db->join('mahasiswa','transaksi_matakuliah.fk_mahasiswa = mahasiswa.id_mahasiswa');
         $this->db->join('matakuliah','transaksi_matakuliah.fk_perkuliahan = matakuliah.id_matakuliah');
         $this->db->join('dosen','matakuliah.fk_dosen = dosen.id_dosen');
+        $this->db->join('jadwal','transaksi_matakuliah.fk_jadwal = jadwal.id_jadwal');
+
         $query= $this->db->get();
         return $query->result();
     }

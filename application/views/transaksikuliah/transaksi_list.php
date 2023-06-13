@@ -25,6 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <th>Mahasiswa</th>
             <th>Perkuliahan</th>
             <th>dosen</th>
+            <th>Shift</th>
+            <th>Hari</th>
+            <th>Jam</th>
+            <th>Lokasi</th>
+            <th>Periode Akademik</th>
             <?php if($this->session->userdata('role') == "admin") {?>
 
             <th colspan="2">Action</th>
@@ -36,7 +41,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td><?= $i++ ?></td>
             <td><?= $transaksis->nama ?></td>
             <td><?= $transaksis->nama_kuliah ?></td>
-            <td><?= $transaksis->nama_dosen ?></td>      
+            <td><?= $transaksis->nama_dosen ?></td>
+            <td><?= $transaksis->shift_kelas ?></td>  
+            <td><?= $transaksis->hari ?></td>  
+            <td><?= $transaksis->jam ?></td>       
+            <td><?= $transaksis->lokasi ?></td>   
+            <td><?= $transaksis->periode_akademik ?></td>                         
+        
             <?php if($this->session->userdata('role') == "admin") {?>
       
             <td><a href="<?=site_url('Transaksikuliah/edit/'.$transaksis->id_transaksi)?>" class="btn btn-primary">Edit</a></td> 
