@@ -51,12 +51,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php 
       $fk_mahasiswa='';
       $fk_perkuliahan='';
+      $fk_jadwal='';
      
     if (isset($transaksi)) {
       $fk_mahasiswa=$transaksi->fk_mahasiswa;
       $fk_perkuliahan=$transaksi->fk_perkuliahan;
-     
-      
+      $fk_jadwal=$transaksi->fk_jadwal; 
     }
 
     
@@ -79,9 +79,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   <div class="mb-3 mt-3 ms-3">
     <select name="fk_perkuliahan" id="" required>
-      <option value="">Choose Type</option>
-        <?php foreach($kuliah as $matkul) { ?>
-      <option value="<?= $matkul->id_matakuliah; ?>" <?= set_select('fk_perkuliahan',$matkul->id_matakuliah,$fk_perkuliahan==$matkul->id_matakuliah?TRUE:FALSE)?>> <?= $matkul->nama_kuliah; ?> </option>
+      <option value="">Choose Matakuliah</option>
+        <?php foreach($jadwal as $matkul) { ?>
+      <option value="<?= $matkul->id_jadwal; ?>" <?= set_select('fk_perkuliahan',$matkul->id_jadwal,$fk_perkuliahan==$matkul->id_jadwal?TRUE:FALSE)?>> <?= $matkul->nama_kuliah; ?> </option>
         <?php } ?>
     </select>
   </div>

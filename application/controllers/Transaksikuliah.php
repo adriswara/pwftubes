@@ -25,6 +25,8 @@ class transaksikuliah extends CI_Controller {
 			 $this->load->model('Transaksi_model');
 			 $this->load->model('Categori_model');
 			 $this->load->model('Cats_model');
+			 $this->load->model('Jadwal_model');
+
 			 // Your own constructor code
 	 }
 
@@ -47,6 +49,7 @@ class transaksikuliah extends CI_Controller {
 		// $this->load->model('Transaksi_model');
 		$data['mahasiswa']=$this->Cats_model->read();
 		$data['kuliah']=$this->Categori_model->read();
+		$data['jadwal']=$this->Jadwal_model->read();
 		$this->load->view('Transaksikuliah/transaksi_form',$data);
 	}
 	public function edit($id){
