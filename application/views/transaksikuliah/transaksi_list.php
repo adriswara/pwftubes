@@ -49,7 +49,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td><?= $transaksis->periode_akademik ?></td>                         
         
             <?php if($this->session->userdata('role') == "admin") {?>
-      
             <td><a href="<?=site_url('Transaksikuliah/edit/'.$transaksis->id_transaksi)?>" class="btn btn-primary">Edit</a></td> 
             <td><a href="<?=site_url('Transaksikuliah/delete/'.$transaksis->id_transaksi)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
             <?php } ?> 
