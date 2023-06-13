@@ -94,7 +94,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?= $this->session->flashdata('msg'); ?>
   <p>Berikut daftar jadwal yang tersedia</p>
 </div>
+<?php if($this->session->userdata('role') == "admin") {?>
+
     <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Jadwal/add')?>">Add new Jadwal</a>
+    <?php } ?> 
+
     <hr>
   	<div class="table-responsive">
     <table class="table table-bordered table-hover">
@@ -107,7 +111,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <th>Jam</th>
             <th>Lokasi</th>
             <th>Periode Akademik</th>
+            <?php if($this->session->userdata('role') == "admin") {?>
             <th colspan="2">Action</th>
+            <?php } ?> 
+
         </tr>
         <?php $i=1; foreach($jadwals as $jadwal) { ?>
         <tr class="table-warning">
@@ -119,9 +126,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td><?= $jadwal->jam ?></td>
             <td><?= $jadwal->lokasi ?></td>
             <td><?= $jadwal->periode_akademik ?></td>
+            <?php if($this->session->userdata('role') == "admin") {?>
             <td> <a href="<?=site_url('Jadwal/edit/'.$jadwal->id_jadwal)?>" class="btn btn-primary">Edit</a> </td>
             <td> <a href="<?=site_url('Jadwal/delete/'.$jadwal->id_jadwal)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
-        </tr>
+            <?php } ?> 
+          </tr>
         <?php } ?>
     </table>
     </div>
