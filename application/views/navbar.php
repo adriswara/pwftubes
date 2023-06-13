@@ -8,24 +8,29 @@
     </button>
     <div class="collapse navbar-collapse" id="mynavbar" >
       <ul class="navbar-nav me-auto ">
-        <li class="nav-item">
-	  		<a class="nav-link" href="<?= site_url('cats') ?>">Student List</a>
-        </li>
+      <?php if($this->session->userdata('role') == "admin") {?>
         <li class="nav-item">
 	  		<a class="nav-link" href="<?= site_url('dosen') ?>">Dosen List</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('categori') ?>">Matakuliah List</a>
+	  		<a class="nav-link" href="<?= site_url('cats') ?>">Student List</a>
         </li>
         <li class="nav-item">
-	  		<!-- <a class="nav-link" href="?=// site_url('jadwal') ?>" disabled>Jadwal List</a> -->
+        <a class="nav-link" href="<?= site_url('categori') ?>">Matakuliah List</a>
+        </li>
+      <?php } ?> 
+        
+        <li class="nav-item">
+	  		<a class="nav-link" href="<?= site_url('jadwal') ?>" >Jadwal List</a>
         </li>
         <li class="nav-item">
 	  		<a class="nav-link" href="<?= site_url('informasi') ?>">Informasi perkuliahan</a>
         </li>
+        <?php if($this->session->userdata('role') != null) {?>
         <li class="nav-item">
           <a class="nav-link" href="<?= site_url('transaksikuliah') ?>">Pengambilan Matakuliah</a>
         </li>
+        <?php } ?> 
       </ul>
       <form class="d-flex">
      

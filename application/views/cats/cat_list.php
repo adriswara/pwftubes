@@ -104,7 +104,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <th>Status mahasiswa</th>
             <th>ipk</th>
             <th>Total SKS Lulus</th>
-            <th colspan="2">Action</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th colspan="3">Action</th>
         </tr>
         <?php $i=1; foreach($cats as $cat) { ?>
         <tr class="table-warning">
@@ -113,6 +115,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td><?= $cat->role ?></td>
             <td><?= $cat->ipk ?></td>
             <td><?= $cat->sks_lulus ?></td>
+            <td><?= $cat->username ?></td>
+            <td><?= $cat->password ?></td>
+
             
             <td><a href="<?=site_url('Cats/reset/'.$cat->id_mahasiswa)?>" class="btn btn-warning">Reset Password</a></td>
             <td> <a href="<?=site_url('Welcome/edit/'.$cat->id_mahasiswa)?>" class="btn btn-primary">Edit</a> </td>

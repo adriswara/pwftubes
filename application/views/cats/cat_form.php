@@ -21,11 +21,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $role='';
       $ipk='';
       $sks_lulus='';
+      $username='';
+      $password='';
     if (isset($cat)) {
       $nama=$cat->nama;
       $role=$cat->role;
       $ipk=$cat->ipk;
       $sks_lulus=$cat->sks_lulus;
+      $username=$cat->username;
+      $password=$cat->password;
     }
 
     ?>
@@ -48,6 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="mb-3 mt-3 ms-3">
     <label for=" sks_lulus" class="form-label"> sks_lulus</label>
     <input type="text" class="form-control" id="sks_lulus" placeholder="SKS lulus" name="sks_lulus" value="<?= $sks_lulus ?>" required>
+  </div>
+  <div class="mb-3 mt-3 ms-3">
+    <label for=" username" class="form-label"> username</label>
+    <input type="text" class="form-control" id="username" placeholder="SKS lulus" name="username" value="<?= $username ?>" required>
   </div>
 
   <button type="submit" class="btn btn-primary ms-3" value="save" name="submit">Submit</button>

@@ -90,25 +90,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <div class="mt-0 p-5 bg-primary text-white">
-  <h1>Daftar Dosen</h1>
+  <h1>Daftar Jadwal</h1>
   <?= $this->session->flashdata('msg'); ?>
-  <p>Berikut daftar Dosen yang tersedia</p>
+  <p>Berikut daftar jadwal yang tersedia</p>
 </div>
-    <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Dosen/add')?>">Add new Dosen</a>
+    <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Jadwal/add')?>">Add new Jadwal</a>
     <hr>
   	<div class="table-responsive">
     <table class="table table-bordered table-hover">
         <tr class="table-primary">
             <th>No</th>
-            <th>Nama</th>
+            <th>Matakuliah</th>
+            <th>Dosen</th>
+            <th>Shift Kelas</th>
+            <th>Hari</th>
+            <th>Jam</th>
+            <th>Lokasi</th>
+            <th>Periode Akademik</th>
             <th colspan="2">Action</th>
         </tr>
-        <?php $i=1; foreach($dosens as $dosen) { ?>
+        <?php $i=1; foreach($jadwals as $jadwal) { ?>
         <tr class="table-warning">
             <td><?= $i++ ?></td>
-            <td><?= $dosen->nama_dosen ?></td>
-            <td> <a href="<?=site_url('Dosen/edit/'.$dosen->id_dosen)?>" class="btn btn-primary">Edit</a> </td>
-            <td> <a href="<?=site_url('Dosen/delete/'.$dosen->id_dosen)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
+            <td><?= $jadwal->nama_kuliah ?></td>
+            <td><?= $jadwal->nama_dosen ?></td>
+            <td><?= $jadwal->shift_kelas ?></td>
+            <td><?= $jadwal->hari ?></td>
+            <td><?= $jadwal->jam ?></td>
+            <td><?= $jadwal->lokasi ?></td>
+            <td><?= $jadwal->periode_akademik ?></td>
+            <td> <a href="<?=site_url('Jadwal/edit/'.$jadwal->id_jadwal)?>" class="btn btn-primary">Edit</a> </td>
+            <td> <a href="<?=site_url('Jadwal/delete/'.$jadwal->id_jadwal)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
         </tr>
         <?php } ?>
     </table>

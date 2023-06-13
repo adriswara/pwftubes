@@ -94,7 +94,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <?= $this->session->flashdata('msg'); ?>
   <p>Berikut daftar Informasi kuliah yang tersedia</p>
 </div>
+<?php if($this->session->userdata('role') == "admin") {?>
     <a class="btn btn-dark mt-4 ms-3" href="<?=site_url('Informasi/add')?>">Add new Dosen</a>
+<?php } ?> 
     <hr>
   	<div class="table-responsive">
     <table class="table table-bordered table-hover">
@@ -103,7 +105,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <th>judul</th>
             <th>tanggal</th>
             <th>isi pengumuman</th>
+            <?php if($this->session->userdata('role') == "admin") {?>
             <th colspan="2">Action</th>
+            <?php } ?> 
+
         </tr>
         <?php $i=1; foreach($informasis as $informasi) { ?>
         <tr class="table-warning">
@@ -111,8 +116,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <td><?= $informasi->judul ?></td>
             <td><?= $informasi->tanggal ?></td>
             <td><?= $informasi->isiPengumuman ?></td>
+            <?php if($this->session->userdata('role') == "admin") {?>
             <td> <a href="<?=site_url('Informasi/edit/'.$informasi->id_informasi)?>" class="btn btn-primary">Edit</a> </td>
             <td> <a href="<?=site_url('Informasi/delete/'.$informasi->id_informasi)?>" class="btn btn-danger" onclick="return confirm('Confurm Delete?')" >Delete</a></td>
+            <?php } ?> 
+
         </tr>
         <?php } ?>
     </table>

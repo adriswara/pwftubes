@@ -6,10 +6,10 @@ class Jadwal_model extends CI_Model {
 	public function create()
 	{
     $data = array(
-        'fk_mahasiswa' => $this->input->post('fk_mahasiswa'),
+        'fk_dosen' => $this->input->post('fk_dosen'),
         'fk_perkuliahan' => $this->input->post('fk_perkuliahan')
     );
-    $this->db->insert('transaksi_matakuliah',$data);
+    $this->db->insert('jadwal',$data);
         
 
 	}
@@ -17,9 +17,8 @@ class Jadwal_model extends CI_Model {
 	{
     //   $query=$this->db->get('transaksi_matakuliah');
         $this->db->select('*');
-        $this->db->from('transaksi_matakuliah');
-        $this->db->join('mahasiswa','transaksi_matakuliah.fk_mahasiswa = mahasiswa.id_mahasiswa');
-        $this->db->join('matakuliah','transaksi_matakuliah.fk_perkuliahan = matakuliah.id_matakuliah');
+        $this->db->from('jadwal');
+        $this->db->join('matakuliah','jadwal.fk_matakuliah = matakuliah.id_matakuliah');
         $this->db->join('dosen','matakuliah.fk_dosen = dosen.id_dosen');
         $query= $this->db->get();
         return $query->result();
@@ -27,13 +26,13 @@ class Jadwal_model extends CI_Model {
     
     public function read_by($id)//form edit
 	{
-        $this->db->where('id_transaksi',$id);
-        $query=$this->db->get('transaksi_matakuliah');
+        $this->db->where('id_jadwal',$id);
+        $query=$this->db->get('jadwal');
         return $query->row();
     }
     public function update($id){
         $data = array(
-            'fk_mahasiswa' => $this->input->post('fk_mahasiswa'),
+            'fk_dosen' => $this->input->post('fk_dosen'),
             'fk_perkuliahan' => $this->input->post('fk_perkuliahan')
         );
         $this->db->where('id_transaksi',$id);
