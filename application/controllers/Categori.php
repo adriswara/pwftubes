@@ -56,7 +56,10 @@ class Categori extends CI_Controller {
 		$this->load->view('categori/categori_form',$data);
 	}
 	public function delete($id){
-		$this->Categori_model->delete($id);
+		$this->db->set('matakuliah_delete', 1);
+		$this->db->where('id_matakuliah', $id);
+		$this->db->update('matakuliah');
+		// $this->Categori_model->delete($id);
 		redirect('');
 	}
 }

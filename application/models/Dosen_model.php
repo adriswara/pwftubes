@@ -14,6 +14,7 @@ class Dosen_model extends CI_Model {
 	}
 	public function read()
 	{
+      $this->db->where('soft_delete',0);  
       $query=$this->db->get('dosen');
         return $query->result();
     }

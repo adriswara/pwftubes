@@ -78,14 +78,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 
   <div class="mb-3 mt-3 ms-3">
-    <select name="fk_perkuliahan" id="" required>
+    <select name="fk_jadwal" id="" required>
       <option value="">Choose Matakuliah</option>
         <?php foreach($jadwal as $matkul) { ?>
-      <option value="<?= $matkul->id_jadwal; ?>" <?= set_select('fk_perkuliahan',$matkul->id_jadwal,$fk_perkuliahan==$matkul->id_jadwal?TRUE:FALSE)?>> <?= $matkul->nama_kuliah; ?> </option>
+      <option value="<?= $matkul->id_jadwal; ?>" <?= set_select('fk_jadwal',$matkul->id_jadwal,$fk_jadwal==$matkul->id_jadwal?TRUE:FALSE)?>> <?= $matkul->nama_kuliah; ?> <?= $matkul->periode_akademik; ?> </option>
         <?php } ?>
     </select>
+    <!-- <input type="hidden" class="form-control" id="fk_jadwal" name="fk_jadwal" value="<?= $matkul->id_jadwal; ?>"> -->
   </div>
 
+
+  <!-- <input type="text" class="form-control" id="hari"  name="hari" value="<?= $hari ?>" required> -->
 
 <!-- 
   <div class="mb-3 mt-3 ms-3">

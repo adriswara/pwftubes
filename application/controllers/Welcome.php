@@ -76,7 +76,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('cats/cat_form',$data);
 	}
 	public function delete($id){
-		$this->Cats_model->delete($id);
+	// $this->Cats_model->delete($id);
+	$this->db->set('mahasiswa_delete', 1);
+	$this->db->where('id_mahasiswa', $id);
+	$this->db->update('mahasiswa');
 		if ($this->db->affected_rows()>0) {
 			$this->session->set_flashdata('msg','Mahasiswa sucessfully deleted !');		
 		}else {

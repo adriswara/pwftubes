@@ -63,10 +63,15 @@ class transaksikuliah extends CI_Controller {
 		$data['transaksi']=$this->Transaksi_model->read_by($id);
 		$data['mahasiswa']=$this->Cats_model->read();
 		$data['kuliah']=$this->Categori_model->read();
+		$data['jadwal']=$this->Jadwal_model->read();
+
 		$this->load->view('Transaksikuliah/transaksi_form',$data);
 	}
 	public function delete($id){
-		$this->Transaksi_model->delete($id);
+		// $this->Transaksi_model->delete($id);
+		$this->db->set('transaksi_delete', 1);
+		$this->db->where('id_transaksi', $id);
+		$this->db->update('transaksi_matakuliah');
 		redirect('');
 	}
 }

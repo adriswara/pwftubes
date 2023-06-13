@@ -17,7 +17,9 @@ class Cats_model extends CI_Model {
 	}
 	public function read()
 	{
-      $query=$this->db->get('mahasiswa');
+        $this->db->where('mahasiswa_delete',0);  
+        $this->db->where('superuser',0);
+        $query=$this->db->get('mahasiswa');
         return $query->result();
     }
     
@@ -33,6 +35,9 @@ class Cats_model extends CI_Model {
             'role' => $this->input->post('role'),
             'ipk' => $this->input->post('ipk'),
             'sks_lulus' => $this->input->post('sks_lulus'),
+            'username' => $this->input->post('username'),
+
+
         );
         $this->db->where('id_mahasiswa',$id);
         $this->db->update('mahasiswa',$data);

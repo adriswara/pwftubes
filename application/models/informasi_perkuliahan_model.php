@@ -19,9 +19,7 @@ class Informasi_perkuliahan_model extends CI_Model {
     //   $query=$this->db->get('informasi_perkuliahan');
         $this->db->select('*');
         $this->db->from('informasi_perkuliahan');
-        // $this->db->join('mahasiswa','informasi_perkuliahan.fk_mahasiswa = mahasiswa.id_mahasiswa');
-        // $this->db->join('matakuliah','informasi_perkuliahan.fk_perkuliahan = matakuliah.id_matakuliah');
-        // $this->db->join('dosen','matakuliah.fk_dosen = dosen.id_dosen');
+        $this->db->where('informasi_delete',0);  
         $query= $this->db->get();
         return $query->result();
     }

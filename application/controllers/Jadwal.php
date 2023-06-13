@@ -42,17 +42,17 @@ class jadwal extends CI_Controller {
 		if ($this->input->post('submit')) {
 			$this->load->model('jadwal_model');
 			$this->jadwal_model->create();
-			redirect('jadwalkuliah/');
+			redirect('jadwal/');
 		}
 		// $this->load->model('jadwal_model');
 		$data['mahasiswa']=$this->Cats_model->read();
 		$data['kuliah']=$this->Categori_model->read();
-		$this->load->view('jadwalkuliah/jadwal_form',$data);
+		$this->load->view('jadwal/jadwal_form',$data);
 	}
-	public function edit($id){
+	public function edit($id,$fk){
 		if ($this->input->post('submit')) {
 			$this->jadwal_model->update($id);
-			redirect('jadwalkuliah/');
+			redirect('jadwal/');
 		}
 
 		// $this->load->model('jadwal_model');
@@ -60,10 +60,14 @@ class jadwal extends CI_Controller {
 		$data['jadwals']=$this->jadwal_model->read_by($id);
 		$data['mahasiswa']=$this->Cats_model->read();
 		$data['kuliah']=$this->Categori_model->read();
-		$this->load->view('jadwalkuliah/jadwal_form',$data);
+		$data['jadwal']=$this->Categori_model->read($fk);
+		$this->load->view('jadwal/jadwal_form',$data);
 	}
 	public function delete($id){
-		$this->jadwal_model->delete($id);
+		// $this->jadwal_model->delete($id);
+		$this->db->set('jadwal_delete', 1);
+		$this->db->where('id_jadwal', $id);
+		$this->db->update('jadwal');
 		redirect('');
 	}
 }

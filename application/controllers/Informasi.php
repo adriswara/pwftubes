@@ -66,7 +66,10 @@ class Informasi extends CI_Controller {
 		$this->load->view('informasi_perkuliahan/informasi_perkuliahan_form',$data);
 	}
 	public function delete($id){
-		$this->Informasi_perkuliahan_model->delete($id);
+		// $this->Informasi_perkuliahan_model->delete($id);
+		$this->db->set('informasi_delete', 1);
+		$this->db->where('id_informasi', $id);
+		$this->db->update('informasi_perkuliahan');
 		if ($this->db->affected_rows()>0) {
 			$this->session->set_flashdata('msg','informasi_perkuliahan sucessfully deleted !');		
 		}else {

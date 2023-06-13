@@ -15,7 +15,8 @@ class Categori_model extends CI_Model {
 	}
 	public function read()
 	{
-      $query=$this->db->get('matakuliah');
+        $this->db->where('matakuliah_delete',0);  
+        $query=$this->db->get('matakuliah');
         return $query->result();
     }
     

@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->load->view('navbar'); ?>
 
 <body>
-    <h1>CATSHOP</h1>
+    <h1>STUPOR</h1>
     <h3>LOGIN</h3>
     <hr>
     <?=$this->session->flashdata('msg')?>

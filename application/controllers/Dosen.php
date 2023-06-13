@@ -66,7 +66,10 @@ class Dosen extends CI_Controller {
 		$this->load->view('dosen/dosen_form',$data);
 	}
 	public function delete($id){
-		$this->Dosen_model->delete($id);
+		// $this->Dosen_model->delete($id);
+		$this->db->set('soft_delete', 1);
+		$this->db->where('id_dosen', $id);
+		$this->db->update('dosen');
 		if ($this->db->affected_rows()>0) {
 			$this->session->set_flashdata('msg','dosen sucessfully deleted !');		
 		}else {
