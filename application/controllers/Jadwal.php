@@ -50,7 +50,7 @@ class jadwal extends CI_Controller {
 		$data['kuliah']=$this->Categori_model->read();
 		$this->load->view('jadwal/jadwal_form',$data);
 	}
-	public function edit($id,$fk){
+	public function edit($id){
 		if ($this->input->post('submit')) {
 			$this->jadwal_model->update($id);
 			redirect('jadwal/');
@@ -61,7 +61,7 @@ class jadwal extends CI_Controller {
 		$data['jadwals']=$this->jadwal_model->read_by($id);
 		$data['mahasiswa']=$this->Cats_model->read();
 		$data['kuliah']=$this->Categori_model->read();
-		$data['jadwal']=$this->Categori_model->read($fk);
+		$data['jadwal']=$this->Categori_model->read();
 		$this->load->view('jadwal/jadwal_form',$data);
 	}
 	public function delete($id){

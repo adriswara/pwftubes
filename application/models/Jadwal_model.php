@@ -32,7 +32,7 @@ class Jadwal_model extends CI_Model {
         }  
         $this->db->join('dosen','jadwal.fk_dosen = dosen.id_dosen');
         $this->db->where('jadwal_delete',0);
-        if($this->session->userdata('role') != "admin") {
+        if($this->session->userdata('role') != "admin" && $this->session->userdata('role') != null) {
             $this->db->where('nama',$this->session->userdata('nama'));  
         }  
         $query= $this->db->get();
