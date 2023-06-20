@@ -26,8 +26,15 @@ class Jadwal_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('jadwal');
         $this->db->join('matakuliah','jadwal.fk_matakuliah = matakuliah.id_matakuliah');
-        $this->db->join('dosen','matakuliah.fk_dosen = dosen.id_dosen');
-        $this->db->where('jadwal_delete',0);  
+        if($this->session->userdata('role') != "admin") {
+            $this->db->join('transaksi_matakuliah','transaksi_matakuliah.fk_jadwal = jadwal.id_jadwal');
+            $this->db->join('mahasiswa','transaksi_matakuliah.fk_mahasiswa = mahasiswa.id_mahasiswa');
+        }  
+        $this->db->join('dosen','jadwal.fk_dosen = dosen.id_dosen');
+        $this->db->where('jadwal_delete',0);
+        if($this->session->userdata('role') != "admin") {
+            $this->db->where('nama',$this->session->userdata('nama'));  
+        }  
         $query= $this->db->get();
         return $query->result();
     }

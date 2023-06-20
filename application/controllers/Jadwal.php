@@ -25,6 +25,7 @@ class jadwal extends CI_Controller {
 			 $this->load->model('jadwal_model');
 			 $this->load->model('Categori_model');
 			 $this->load->model('Cats_model');
+			 $this->load->model('Transaksi_model');
 			 // Your own constructor code
 	 }
 

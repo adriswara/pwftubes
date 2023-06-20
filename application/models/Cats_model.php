@@ -10,6 +10,7 @@ class Cats_model extends CI_Model {
             'role' => $this->input->post('role'),
             'ipk' => $this->input->post('ipk'),
             'sks_lulus' => $this->input->post('sks_lulus'),
+            'username' => $this->input->post('username'),
         );
     $this->db->insert('mahasiswa',$data);
         
