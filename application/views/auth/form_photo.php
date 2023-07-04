@@ -36,6 +36,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </tr>
     </table>
 </form>
-<a href="<?=base_url()?>"><h4>Back to Home</h4></a>
+<a class="btn btn-primary mt-4 ms-3"href="<?=base_url()?>"><h6>Back to Home</h6></a>
 
     <?php $this->load->view('footer'); ?>

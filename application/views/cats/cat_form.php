@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="mb-3 mt-3 ms-3">
     <label for="ipk" class="form-label">ipk</label>
-    <input type="number" step="0.01"  class="form-control" id="ipk" placeholder="IPK" name="ipk" value="<?= $ipk ?>" required>
+    <input type="text" class="form-control" id="ipk" placeholder="IPK" name="ipk" value="<?= $ipk ?>" required>
   </div>
   <div class="mb-3 mt-3 ms-3">
     <label for=" sks_lulus" class="form-label"> sks_lulus</label>
@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="mb-3 mt-3 ms-3">
     <label for=" username" class="form-label"> username</label>
-    <input type="text" class="form-control" id="username" placeholder="username" name="username" value="<?= $username ?>" required>
+    <input type="text" class="form-control" id="username" placeholder="SKS lulus" name="username" value="<?= $username ?>" required>
   </div>
 
   <button type="submit" class="btn btn-primary ms-3" value="save" name="submit">Submit</button>

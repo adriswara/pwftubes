@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 13, 2023 at 12:15 PM
+-- Generation Time: Jun 20, 2023 at 03:16 PM
 -- Server version: 8.0.30
--- PHP Version: 7.4.33
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,18 +106,20 @@ CREATE TABLE `mahasiswa` (
   `password` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `superuser` int NOT NULL DEFAULT '0',
-  `mahasiswa_delete` int NOT NULL DEFAULT '0'
+  `mahasiswa_delete` int NOT NULL DEFAULT '0',
+  `photo` varchar(200) NOT NULL DEFAULT 'default.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `role`, `ipk`, `sks_lulus`, `password`, `username`, `superuser`, `mahasiswa_delete`) VALUES
-(1, 'Doe', 'A1', 4, 144, '$2y$10$6Td36/72GdlKKOhBkjJkLOaSxO1dxlZ/YkePR70Nz2POML4Oon.na', 'doe', 0, 0),
-(2, 'john', 'A2', 2, 22, '$2y$10$4A2Z5yV4ij8iovUYOVY12.vNj/BSBRjvI/IejhQyAeFJ0uoCs5lfy', 'john', 0, 0),
-(3, 'admin', 'admin', 5, 999, '$2y$10$.dd129YzHQyeBnVeKGCJKuL4v.trqTI6HBBgM0G5LfaFnwRRM47sa', 'admin', 1, 0),
-(5, 'h', 'h', 1, 1, '$2y$10$jZFzc5W2gdyQyf9024bmmuQPRJZU5JNgG3T1PPqbU2KrwUo6fhG9q', 's', 0, 1);
+INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `role`, `ipk`, `sks_lulus`, `password`, `username`, `superuser`, `mahasiswa_delete`, `photo`) VALUES
+(1, 'Doe', 'A1', 4, 144, '$2y$10$6Td36/72GdlKKOhBkjJkLOaSxO1dxlZ/YkePR70Nz2POML4Oon.na', 'doe', 0, 0, 'default.png'),
+(2, 'john', 'A2', 2, 22, '$2y$10$4A2Z5yV4ij8iovUYOVY12.vNj/BSBRjvI/IejhQyAeFJ0uoCs5lfy', 'john', 0, 0, 'default.png'),
+(3, 'admin', 'admin', 5, 999, '$2y$10$.dd129YzHQyeBnVeKGCJKuL4v.trqTI6HBBgM0G5LfaFnwRRM47sa', 'admin', 1, 0, 'man.png'),
+(5, 'h', 'h', 1, 1, '$2y$10$jZFzc5W2gdyQyf9024bmmuQPRJZU5JNgG3T1PPqbU2KrwUo6fhG9q', 's', 0, 1, 'default.png'),
+(6, 'Kuro Kazuki', 'A1', 3, 144, '$2y$10$AqHQXCBnxxNrW.67ITK4ouiC5u/jFLDegrLZrVtlxJt35FDEm6lkW', 'kuro', 0, 0, 'user_(2)2.png');
 
 -- --------------------------------------------------------
 
@@ -245,7 +247,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_mahasiswa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `matakuliah`

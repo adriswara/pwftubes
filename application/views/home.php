@@ -9,7 +9,13 @@
     <div class="container-md w-75">
     <H1 class="text-center">Student Portal</H1>
     <h3 class="text-center">APPS MENU</h3>
-	<center><h6>Welcome <?=$this->session->userdata('fullname')?>, you are login as <?=$this->session->userdata('usertype')?></h6></center>
+	<div class=""><center><img src="<?=base_url('uploads/users/'.$this->session->userdata('photo'))?>" width="200" height="200" /></center></div>
+	  <br>
+	<div>
+	  <center><a href="<?=site_url('auth/changephoto/')?>" type="button" class="btn btn-primary"> Change Photo </a>
+	  <a href="<?=site_url('auth/changepass/')?>" type="button" class="btn btn-success"> Change Password </a></center>
+	 </div>
+	<center><h6>Welcome <?=$this->session->userdata('nama')?>, you are login as <?=$this->session->userdata('role')?></h6></center>
     <hr>
    
     <div class="row gy-3">

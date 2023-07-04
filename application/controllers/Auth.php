@@ -71,9 +71,9 @@ class Auth extends CI_Controller {
     private function upload(){
         $config['upload_path']          = './uploads/users/';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;
+        $config['max_size']             = '5000';
+        $config['max_width']            = '5000';
+        $config['max_height']           = '5000';
 
         $this->load->library('upload', $config);
         return $this->upload->do_upload('photo');

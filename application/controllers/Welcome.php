@@ -28,8 +28,8 @@ class Welcome extends CI_Controller {
 	 {
 			 parent::__construct();
 			 $this->load->library('form_validation');
-			 $this->load->model('Cats_model');
-			 $this->load->model('Categori_model');
+			 $this->load->model('Mahasiswa_model');
+			 $this->load->model('Matkul_model');
 			 // Your own constructor code
 	 }
 
@@ -46,8 +46,8 @@ class Welcome extends CI_Controller {
 	public function add()
 	{
 		if ($this->input->post('submit')) {
-			$this->load->model('Cats_model');
-			$this->Cats_model->create();
+			$this->load->model('Mahasiswa_model');
+			$this->Mahasiswa_model->create();
 			if ($this->db->affected_rows()>0) {
 				$this->session->set_flashdata('msg','Mahasiswa sucessfully added !');		
 			}else {
@@ -61,7 +61,7 @@ class Welcome extends CI_Controller {
 	}
 	public function edit($id){
 		if ($this->input->post('submit')) {
-			$this->Cats_model->update($id);
+			$this->Mahasiswa_model->update($id);
 			if ($this->db->affected_rows()>0) {
 				$this->session->set_flashdata('msg','Mahasiswa sucessfully updated !');		
 			}else {
@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
 		}
 
 		// $this->load->model('Cats_model');
-		$data['cat']=$this->Cats_model->read_by($id);
+		$data['mahasiswa']=$this->Mahasiswa_model->read_by($id);
 		// $data['categori'] = $this->Categori_model->read();
 		$this->load->view('cats/cat_form',$data);
 	}
@@ -92,7 +92,7 @@ class Welcome extends CI_Controller {
 	public function sale($id){
 
 		if ($this->input->post('submit')) {
-			$this->Cats_model->sale($id);
+			$this->Mahasiswa_model->sale($id);
 			if ($this->db->affected_rows()>0) {
 				$this->session->set_flashdata('msg','Mahasiswa Sold Sucess');
 			}else {
@@ -101,12 +101,12 @@ class Welcome extends CI_Controller {
 			redirect('');
 		}
 
-		$data['cat']=$this->Cats_model->read_by($id);
+		$data['mahasiswa']=$this->Mahasiswa_model->read_by($id);
 		$this->load->view('cats/cat_sales',$data);
 	}
 
 	public function sales(){
-		$data['sales']=$this->Cats_model->sales();
+		$data['sales']=$this->mahasiswa_model->sales();
 		$this->load->view('cats/sale_list',$data);
 	}
 

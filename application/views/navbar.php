@@ -13,10 +13,10 @@
 	  		<a class="nav-link" href="<?= site_url('dosen') ?>">Dosen List</a>
         </li>
         <li class="nav-item">
-	  		<a class="nav-link" href="<?= site_url('cats') ?>">Student List</a>
+	  		<a class="nav-link" href="<?= site_url('mahasiswa') ?>">Student List</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('categori') ?>">Matakuliah List</a>
+        <a class="nav-link" href="<?= site_url('matkul') ?>">Matakuliah List</a>
         </li>
       <?php } ?> 
         
