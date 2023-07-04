@@ -133,6 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </tr>
         <?php } ?>
     </table>
+    <center><p><?=$links;?></p></center>
     </div>
   
   

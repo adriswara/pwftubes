@@ -23,13 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $sks_lulus='';
       $username='';
       $password='';
-    if (isset($cat)) {
-      $nama=$cat->nama;
-      $role=$cat->role;
-      $ipk=$cat->ipk;
-      $sks_lulus=$cat->sks_lulus;
-      $username=$cat->username;
-      $password=$cat->password;
+    if (isset($mahasiswa)) {
+      $nama=$mahasiswa->nama;
+      $role=$mahasiswa->role;
+      $ipk=$mahasiswa->ipk;
+      $sks_lulus=$mahasiswa->sks_lulus;
+      $username=$mahasiswa->username;
+      $password=$mahasiswa->password;
     }
 
     ?>
